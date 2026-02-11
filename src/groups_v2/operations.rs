@@ -25,7 +25,7 @@ use super::{
     Group, GroupChange, GroupChanges,
 };
 
-pub(crate) struct GroupOperations {
+pub struct GroupOperations {
     pub group_secret_params: GroupSecretParams,
 }
 
@@ -284,7 +284,7 @@ impl GroupOperations {
         }
     }
 
-    fn encrypt_title<R: rand::Rng + rand::CryptoRng>(
+    pub fn encrypt_title<R: rand::Rng + rand::CryptoRng>(
         &self,
         title: &str,
         rng: &mut R,
